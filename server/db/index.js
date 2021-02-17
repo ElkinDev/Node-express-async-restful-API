@@ -16,6 +16,8 @@ db_shoppin_cart.all = () => {
 
     return new Promise((resolve,reject) => {
 
+        console.log('show the pool first',pool)
+
         pool.query(`SELECT * FROM shopping_cart.product`,(err, results)=>{
             if (err){
                 return reject (err)
