@@ -2,10 +2,10 @@ const mysql = require('mysql');
 
 const pool= mysql.createPool({
     connectionLimit:10,
-    password:'H4BlCj8EVK',
-    user:'sql5393682',
-    database:'sql5393682',
-    host:'sql5.freemysqlhosting.net',
+    password:'c916a28a',
+    user:'b2f93118ebe8ee',
+    database:'heroku_05414d9e7523f00',
+    host:'us-cdbr-east-03.cleardb.com',
     port:'3306',
 })
 const datetime = new Date().toISOString();
@@ -15,8 +15,6 @@ let db_shoppin_cart={};
 db_shoppin_cart.all = () => {
 
     return new Promise((resolve,reject) => {
-
-        console.log('show the pool first',pool)
 
         pool.query(`SELECT * FROM shopping_cart.product`,(err, results)=>{
             if (err){
