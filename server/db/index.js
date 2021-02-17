@@ -5,7 +5,7 @@ const pool= mysql.createPool({
     password:'c916a28a',
     user:'b2f93118ebe8ee',
     database:'heroku_05414d9e7523f00',
-    host:'us-cdbr-east-03.cleardb.com',
+    host:'localhost',
     port:'3306',
 })
 const datetime = new Date().toISOString();
