@@ -1,5 +1,5 @@
 {
-  "name": "db_shoppingCart",
+  "name": "dbshoppingcart",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,7 +8,7 @@
     "start": "node server/server.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "ElkinDev",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
