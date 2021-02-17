@@ -2,10 +2,10 @@ const mysql = require('mysql');
 
 const pool= mysql.createPool({
     connectionLimit:10,
-    password:'a8be7c58',
-    user:'be1d3db63d6e5e',
-    database:'heroku_7938a8af1258e19',
-    host:'us-cdbr-east-03.cleardb.com',
+    password:'H4BlCj8EVK',
+    user:'sql5393682',
+    database:'sql5393682',
+    host:'sql5.freemysqlhosting.net',
     port:'3306',
 })
 const datetime = new Date().toISOString();
