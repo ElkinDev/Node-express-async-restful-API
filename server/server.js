@@ -19,7 +19,6 @@ app.use(cors())
 
 
 
-
 app.use('/api/v1.0/productlist',routes,(res)=>{
 
 });
