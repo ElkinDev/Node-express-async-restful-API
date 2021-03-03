@@ -1,5 +1,6 @@
 const express= require('express');
 const routes= require('./routes');
+const product_router= require('./routes/products');
 const cart= require('./routes/cart');
 
 const cors = require('cors')
@@ -22,6 +23,16 @@ app.use(cors())
 app.use('/api/v1.0/productlist',routes,(res)=>{
 
 });
+
+
+app.use('/api/v1.0/products',product_router,(res)=>{
+
+});
+
+
+
+
+
 
 app.use('/api/v1.0/order',cart,(res)=>{
 
