@@ -47,11 +47,11 @@ db_shoppin_products.add = (data) => {
 
 
 
-db_shoppin_products.remove = () => {
+db_shoppin_products.remove = (data) => {
 
     return new Promise((resolve,reject) => {
 
-        pool.query(`SELECT * FROM product`,(err, results)=>{
+        pool.query(`DELETE FROM product WHERE (id = '${data.id}');`,(err, results)=>{
             if (err){
                 return reject (err)
             }else{
@@ -68,7 +68,7 @@ db_shoppin_products.update = () => {
 
     return new Promise((resolve,reject) => {
 
-        pool.query(`SELECT * FROM product`,(err, results)=>{
+        pool.query(`UPDATE product SET title = '${data.title}', metaTitle = '${data.metaTitle}', slug = '${data.slug}', summary = '${data.summary}', price = '${data.price}', quantity = '${data.quantity}', updatedAt = '${data.updateDate}', content = '${data.content}' WHERE (id = '${data.id}');`,(err, results)=>{
             if (err){
                 return reject (err)
             }else{

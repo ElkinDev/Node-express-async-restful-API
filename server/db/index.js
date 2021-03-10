@@ -32,7 +32,7 @@ db_shoppin_cart.all = () => {
 db_shoppin_cart.create_cart = (data,iduser) => {
 
     return new Promise((resolve,reject) => {
-        pool.query(`INSERT INTO cart (userId,sessinId,token,status,name,lastName,mobile,email,line1,address,optional_address,city,country,createdAt,updatedAt,content) VALUES ('${iduser}' , '', '', 1, '${data.name}', '${data.lastname}', '${data.phone}',
+        pool.query(`INSERT INTO cart (,sessinId,token,status,name,lastName,mobile,email,line1,address,optional_address,city,country,createdAt,updatedAt,content) VALUES ('${iduser}' , '', '', 1, '${data.name}', '${data.lastname}', '${data.phone}',
                '${data.emailAddress}', '${data.phone}', '${data.address}', '${data.optional_address}', '${data.city}', '${data.state}', '${datetime}', '','')`,(err, results)=>{
             if (err){
                 return reject ({err:true,data:err})
