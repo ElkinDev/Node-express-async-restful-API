@@ -18,14 +18,21 @@ product_router.get('/', async (req,res,next)=>{
 
 product_router.post('/', async (req,res,next)=>{
 
-
-
         try {
-            let results = await db_shoppin_products.add(req.body);
+            if(req.body.delete){
 
-            let productedcreated = await db_shoppin_products.product(results.insertId);
+                let results = await db_shoppin_products.remove(req.body);
+                res.json(results);
 
-            res.json(productedcreated);
+
+            }else{
+                let results = await db_shoppin_products.add(req.body);
+                let productedcreated = await db_shoppin_products.product(results.insertId);
+                res.json(productedcreated);
+
+            }
+            
+
         } catch (e) {
             console.log(e)
             req.json(e)
@@ -33,19 +40,6 @@ product_router.post('/', async (req,res,next)=>{
   })
 
 
-  product_router.delete('/', async (req,res,next)=>{
-
-
-
-    try {
-        let results = await db_shoppin_products.remove(req.body);
-
-        res.json(results);
-    } catch (e) {
-        console.log(e)
-        req.json(e)
-    }
-})
   
   
   
