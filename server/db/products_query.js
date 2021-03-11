@@ -68,13 +68,13 @@ db_shoppin_products.add = (data) => {
 
 
 
-db_shoppin_products.remove = (id) => {
+db_shoppin_products.remove = (data) => {
 
 
-    console.log('got up to there',id)
+    console.log('got up to there',data)
     return new Promise((resolve,reject) => {
 
-        pool.query(`DELETE FROM product WHERE id = '${id}';`,(err, results)=>{
+        pool.query(`DELETE FROM product WHERE id = '${data.id}';`,(err, results)=>{
             if (err){
                 return reject (err)
             }else{
