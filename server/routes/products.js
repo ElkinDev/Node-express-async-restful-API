@@ -18,7 +18,18 @@ product_router.get('/', async (req,res,next)=>{
 
 product_router.post('/', async (req,res,next)=>{
 
-    console.log('got it here',req.body)
+
+
+        try {
+            let results = await db_shoppin_products.add(req.body);
+
+            console.log('got it here',results)
+
+            res.json(results);
+        } catch (e) {
+            console.log(e)
+            req.json(e)
+        }
   })
   
   

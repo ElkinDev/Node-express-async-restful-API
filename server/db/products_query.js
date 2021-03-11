@@ -38,8 +38,9 @@ db_shoppin_products.add = (data) => {
         data.updatedAt=date_ob
         data.publishedAt=date_ob
 
+        
 
-        pool.query(`INSERT INTO product (title,metaTitle,slug,summary,price,quantity,createdAt,updatedAt,publishedAt,content,image_feature) VALUES ( '${data.userid}', '${data.metaTitle}', '${data.slug}', '${data.summary}', '${data.price}', '${data.quantity}', '${data.createdAt}', '${data.updatedAt}', '${data.publishedAt}', '${data.content}', '${data.image_feature}');
+        pool.query(`INSERT INTO product (title,metaTitle,slug,summary,price,quantity,createdAt,updatedAt,publishedAt,content,image_feature) VALUES ( '${data.title}', '${data.type}', '${data.slug}', '${data.summary}', '${data.price}', '${data.quantity}', '${data.createdAt}', '${data.updatedAt}', '${data.publishedAt}', '${data.content}', '${data.image_feature}');
         `,(err, results)=>{
             if (err){
                 return reject (err)
