@@ -70,6 +70,8 @@ db_shoppin_products.add = (data) => {
 
 db_shoppin_products.remove = (id) => {
 
+
+    console.log('got up to there',id)
     return new Promise((resolve,reject) => {
 
         pool.query(`DELETE FROM product WHERE id = '${id}';`,(err, results)=>{
