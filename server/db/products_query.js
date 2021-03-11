@@ -72,7 +72,7 @@ db_shoppin_products.remove = (id) => {
 
     return new Promise((resolve,reject) => {
 
-        pool.query(`DELETE FROM product WHERE (id = '${id}');`,(err, results)=>{
+        pool.query(`DELETE FROM product WHERE id = '${id}';`,(err, results)=>{
             if (err){
                 return reject (err)
             }else{
