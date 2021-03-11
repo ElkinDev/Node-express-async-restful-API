@@ -25,15 +25,27 @@ product_router.post('/', async (req,res,next)=>{
 
             let productedcreated = await db_shoppin_products.product(results.insertId);
 
-
-            console.log('got it here',productedcreated)
-
             res.json(productedcreated);
         } catch (e) {
             console.log(e)
             req.json(e)
         }
   })
+
+
+  product_router.delete('/', async (req,res,next)=>{
+
+
+
+    try {
+        let results = await db_shoppin_products.remove(req.body);
+
+        res.json(results);
+    } catch (e) {
+        console.log(e)
+        req.json(e)
+    }
+})
   
   
   
