@@ -14,4 +14,14 @@ product_router.get('/', async (req,res,next)=>{
     }
 })
 
+
+
+product_router.post('/', async (req,res,next)=>{
+
+    console.log('got it here',req)
+  })
+  
+  
+  
+
 module.exports = product_router

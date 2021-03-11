@@ -32,6 +32,13 @@ db_shoppin_products.add = (data) => {
 
     return new Promise((resolve,reject) => {
 
+        let date_ob = new Date();
+
+        data.createdAt=date_ob
+        data.updatedAt=date_ob
+        data.publishedAt=date_ob
+
+
         pool.query(`INSERT INTO product (title,metaTitle,slug,summary,price,quantity,createdAt,updatedAt,publishedAt,content,image_feature) VALUES ( '${data.userid}', '${data.metaTitle}', '${data.slug}', '${data.summary}', '${data.price}', '${data.quantity}', '${data.createdAt}', '${data.updatedAt}', '${data.publishedAt}', '${data.content}', '${data.image_feature}');
         `,(err, results)=>{
             if (err){
