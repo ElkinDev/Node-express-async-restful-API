@@ -28,6 +28,24 @@ db_shoppin_products.all = () => {
 }
 
 
+db_shoppin_products.product = (id) => {
+
+    return new Promise((resolve,reject) => {
+
+        pool.query(`SELECT * FROM product  where id= '${id}' `,(err, results)=>{
+            if (err){
+                return reject (err)
+            }else{
+                return resolve(results)
+            }
+        })
+
+    })
+
+}
+
+
+
 db_shoppin_products.add = (data) => {
 
     return new Promise((resolve,reject) => {
@@ -40,7 +58,7 @@ db_shoppin_products.add = (data) => {
 
         
 
-        pool.query(`INSERT INTO product (title,metaTitle,slug,summary,price,quantity,createdAt,updatedAt,publishedAt,content,image_feature) VALUES ( '${data.title}', '${data.type}', '${data.slug}', '${data.summary}', '${data.price}', '${data.quantity}', '${data.createdAt}', '${data.updatedAt}', '${data.publishedAt}', '${data.content}', '${data.image_feature}');
+        pool.query(`INSERT INTO product (title,metaTitle,slug,summary,price,quantity,createdAt,updatedAt,publishedAt,content,image_feature) VALUES ( '${data.title}', '${data.type}', '${data.slug}', '${data.summary}', '${data.price}', '${data.quantity}', '${data.createdAt}', '${data.updatedAt}', '${data.publishedAt}', '${data.content}', '${data.image}');
         `,(err, results)=>{
             if (err){
                 return reject (err)

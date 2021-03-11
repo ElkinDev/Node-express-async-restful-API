@@ -23,9 +23,12 @@ product_router.post('/', async (req,res,next)=>{
         try {
             let results = await db_shoppin_products.add(req.body);
 
-            console.log('got it here',results)
+            let productedcreated = await db_shoppin_products.product(results.insertId);
 
-            res.json(results);
+
+            console.log('got it here',productedcreated)
+
+            res.json(productedcreated);
         } catch (e) {
             console.log(e)
             req.json(e)
